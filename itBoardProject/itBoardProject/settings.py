@@ -77,9 +77,9 @@ WSGI_APPLICATION = 'itBoardProject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'itBoard',
-        'USER': 'postgres',
-        'PASSWORD': 'rkdwlsdud3',
+        'NAME': 'itboard',
+        'USER': 'itboarduser',
+        'PASSWORD': 'P@ssw0rd1',
         'HOST': 'localhost',
         'PORT': '',
     }
