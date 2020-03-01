@@ -107,3 +107,13 @@ Python IT board project : Python, Django, PostgreSQL
 -->
 
 11. Create 'templates' folder and index.html : itBoardProject/itBoardApp/template/index.html
+<!-- 
+{% extends 'base.html' %}
+{% block content %}
+<h2>IT Board</h2>
+<p>Welcome to the site that
+    reviews everything tech
+</p>
+<p>Under construction</p>
+{%  endblock %}
+-->
