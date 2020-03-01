@@ -42,7 +42,7 @@ Python IT board project : Python, Django, PostgreSQL
   }<br>
 
 4) create database in postgreSQL<br>
-  type in query tool: CREATE DATABASE itBoard; <br>
+  type in query tool: CREATE DATABASE itboard; <br>
   or open pgadmin page -> right click create - database -> type database name -> save <br>
 
 5) migrate database <br>
@@ -106,4 +106,14 @@ Python IT board project : Python, Django, PostgreSQL
 
 -->
 
-11)
+11. Create 'templates' folder and index.html : itBoardProject/itBoardApp/template/itBoardApp/index.html
+<!-- 
+{% extends 'base.html' %}
+{% block content %}
+<h2>IT Board</h2>
+<p>Welcome to the site that
+    reviews everything tech
+</p>
+<p>Under construction</p>
+{%  endblock %}
+-->
