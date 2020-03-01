@@ -42,7 +42,7 @@ Python IT board project : Python, Django, PostgreSQL
   }<br>
 
 4) create database in postgreSQL<br>
-  type in query tool: CREATE DATABASE itBoard; <br>
+  type in query tool: CREATE DATABASE itboard; <br>
   or open pgadmin page -> right click create - database -> type database name -> save <br>
 
 5) migrate database <br>
