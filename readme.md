@@ -106,7 +106,7 @@ Python IT board project : Python, Django, PostgreSQL
 
 -->
 
-11. Create 'templates' folder and index.html : itBoardProject/itBoardApp/template/index.html
+11. Create 'templates' folder and index.html : itBoardProject/itBoardApp/template/itBoardApp/index.html
 <!-- 
 {% extends 'base.html' %}
 {% block content %}
