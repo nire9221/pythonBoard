@@ -106,4 +106,4 @@ Python IT board project : Python, Django, PostgreSQL
 
 -->
 
-11)
+11)Create 'templates' folder and index.html : itBoardProject/itBoardApp/template/index.html
