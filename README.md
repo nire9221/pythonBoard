@@ -79,11 +79,10 @@ Python IT board project : Python, Django, PostgreSQL
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Tech Reviews</title>
+        <title>IT Board</title>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-        
     </head>
     <body>
         <div class='jumbotron' style="background-color: Navy; color: white;">
