@@ -140,4 +140,4 @@ class Event(models.Model):
         verbose_name_plural = 'events'
 
 13) migrate database : type --> python3 manage.py makemigrations
-
+14) Register models : admin.py
