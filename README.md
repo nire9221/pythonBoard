@@ -75,7 +75,7 @@ Python IT board project : Python, Django, PostgreSQL
   ]
 
 10) create Base.html 
-
+`
 <!DOCTYPE html>
 <html>
     <head>
@@ -104,5 +104,5 @@ Python IT board project : Python, Django, PostgreSQL
         </div>
     </body>
 </html>
-
+`
 11)
