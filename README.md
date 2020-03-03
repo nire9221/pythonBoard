@@ -33,7 +33,7 @@ Python IT board project : Python, Django, PostgreSQL
   DATABASES = {<br>
     'default': {<br>
     'ENGINE': 'django.db.backends.postgresql_psycopg2',<br>
-    'NAME': 'itBoard',<br>
+    'NAME': 'itboard',<br>
     'USER' : 'itboarduser', <br>
     'PASSWORD': 'P@ssw0rd1',    // type your postgres user name & password <br>
     'HOST' :'localhost',<br>
@@ -74,7 +74,7 @@ Python IT board project : Python, Django, PostgreSQL
       path('', views.index, name='index'),
   ]
 
-10) create Base.html 
+10) create Base.html : itBoardApp/templates/base.html
 `
 <!DOCTYPE html>
 <html>
@@ -105,4 +105,37 @@ Python IT board project : Python, Django, PostgreSQL
     </body>
 </html>
 `
-11)
+11) create index.html file : itBoardApp/templates/itBoardApp/index.html
+`
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>IT Board</h2>
+<p>Welcome to the site that
+    reviews everything tech
+</p>
+<p>Under construction</p>
+
+{%  endblock %}
+`
+
+12) create models : models.py
+
+from django.db import models
+from django.contrib.auth.models import User
+
+class Event(models.Model):
+    eventTitle = models.CharField(max_length=255)
+    location = models.CharField(max_length=255)
+    date = models.DateField()
+    time = models.TimeField()
+    description = models.CharField(max_length=255)
+    userId = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.eventTitle
+
+    class Meta:
+        db_table = 'event'
+        verbose_name_plural = 'events'
+
