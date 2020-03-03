@@ -139,3 +139,5 @@ class Event(models.Model):
         db_table = 'event'
         verbose_name_plural = 'events'
 
+13) migrate database : type --> python3 manage.py makemigrations
+
