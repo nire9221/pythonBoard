@@ -147,4 +147,10 @@ class Event(models.Model):
 
   admin.site.register(Event)
   
-15)
+15)create superuser
+
+python3 manage.py createsuperuser
+Username (leave blank to use 'erin'): 
+Email address: type your email
+Password: 
+Password (again): 
