@@ -273,6 +273,65 @@ urlpatterns = [
 {% endblock %}
 `
 
-25)
+25) create forms.py and add the path 
 
 
+from django import forms
+from .models import Event
+
+
+class EventForm(forms.ModelForm):
+    class Meta:
+        model = Event
+        fields = '__all__'
+        
+        
+26) update eventform : views.py 
+
+from .models import Event, EventForm
+
+def newEvent(request):
+    form = EventForm
+    if request.method == 'POST':
+        form = EventForm(request.POST)
+        if form.is_valid():
+            post = form.save(commit=True)
+            post.save()
+            form = EventForm()
+    else:
+        form = EventForm()
+    return render(request, 'clubApp/newevent.html', {'form': form})
+
+
+27) update path: urls.py
+
+path('newEvent/', views.newEvent, name='newevent'),
+
+
+28)create newEvent.html
+`
+{% extends 'base.html' %}
+{% block content %}
+<h2>Add Event</h2>
+<form method='POST' class="post-form">
+<table class='table'>
+    
+        {% csrf_token %}
+        {{ form.as_table }}
+    
+
+</table>
+<button type="submit" class="save btn btn-default">
+    Save
+</button>
+</form>
+{% endblock %}
+`
+
+29) update link : base.html
+`
+<ul class="nav navbar-nav">
+  <li><a href="{% url 'event' %}">Event</a></li>
+  <li><a href="{% url 'newevent' %}">Add Event</a></li>
+</ul>
+`
