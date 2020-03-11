@@ -125,7 +125,7 @@ from django.db import models
 from django.contrib.auth.models import User
 
 class Event(models.Model):
-    eventTitle = models.CharField(max_length=255)
+    title = models.CharField(max_length=255)
     location = models.CharField(max_length=255)
     date = models.DateField()
     time = models.TimeField()
@@ -258,5 +258,21 @@ urlpatterns = [
 {% endblock %}
 `
 
-24)
+24)create detail template : eventDetail.html
+`
+{% extends 'base.html' %}
+{% block content %}
+<h2>{{ eventdetail.title }}</h2>
+<p>Description: {{ eventdetail.description }} </p>
+<p>Added by: {{ eventdetail.userId }}</p>
+<p>Event Date: {{ eventdetail.date }}</p>
+<p>Event time: {{ eventdetail.time }}</p>
+<p>URL: {{ eventdetail.url }}</p>
+<p>Event location: {{ eventdetail.location }}</p>
+
+{% endblock %}
+`
+
+25)
+
 
