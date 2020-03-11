@@ -206,7 +206,7 @@ urlpatterns = [
 
 `
 from django.shortcuts import render, get_object_or_404
-from .models import Event, eventDetail
+from .models import Event
 
 
 def index(request):
