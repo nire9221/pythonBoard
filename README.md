@@ -183,17 +183,12 @@ urlpatterns = [
  <tr>
      <th>Title</th>
      <th>Description</th>
-     <th>Date</th>
-     <th>Location</th>
-     <th>Detail</th>
+
  </tr>
  {% for e in event_list %}
    <tr>
        <td>{{ e.title }}</td>
        <td>{{ e.description }}</td>
-       <td>{{ e.date }}</td>
-       <td>{{ e.location }}</td>
-        <td><a href="{% url 'eventDetail' id=p.id %}">{{ e.eventDetail }}</a></td>
    </tr>
  {% endfor %}
 </table>
@@ -207,4 +202,61 @@ urlpatterns = [
 </ul>
 `
 
-21)
+21) create detail view : views.py
+
+`
+from django.shortcuts import render, get_object_or_404
+from .models import Event, eventDetail
+
+
+def index(request):
+    return render(request, 'itBoardApp/index.html')
+
+
+def getEvent(request):
+    event_list = Event.objects.all()
+    return render(request, 'itBoardApp/event.html', {'event_list': event_list})
+
+
+def getEventDetail(request, id):
+    eventdetail = get_object_or_404(Event, pk=id)
+
+    return render(request, 'itBoardApp/eventDetail.html', {'eventDetail': eventDetail})
+
+`
+
+22) update url : urls.py
+`
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('', views.index, name='index'),
+    path('getEvent/', views.getEvent, name='event'),
+    path('getEventDetail/<int:id>', views.getEventDetail, name='eventDetail'),
+]
+`
+
+23) update link : event.html
+`
+{% extends 'base.html' %}
+{% block content %}
+<h1>Event</h1>
+<table class='table'>
+ <tr>
+     <th>Title</th>
+     <th>Description</th>
+
+ </tr>
+ {% for e in event_list %}
+    <tr>
+        <td><a href="{% url 'eventDetail' id=p.id %}">{{ e.title }}</a></td>
+        <td> {{e.description }}</td>
+    </tr>
+ {% endfor %}
+</table>
+{% endblock %}
+`
+
+24)
+
