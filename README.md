@@ -154,3 +154,57 @@ Username (leave blank to use 'erin'):
 Email address: type your email
 Password: 
 Password (again): 
+
+
+16) import the model : views.py
+
+from .models import Event
+
+17) create the view 
+
+def getEvent(request):
+    event_list = Event.objects.all()
+    return render(request, 'itBoardApp/event.html', {'event_list': event_list})
+    
+18) update URL: urls.py 
+
+urlpatterns = [
+    path('', views.index, name='index'),
+    path('getEvent/', views.getEvent, name='event'),
+]
+
+19) create event.html
+
+`
+{% extends 'base.html' %}
+{% block content %}
+<h1>Event</h1>
+<table class='table'>
+ <tr>
+     <th>Title</th>
+     <th>Description</th>
+     <th>Date</th>
+     <th>Location</th>
+     <th>Detail</th>
+ </tr>
+ {% for e in event_list %}
+   <tr>
+       <td>{{ e.title }}</td>
+       <td>{{ e.description }}</td>
+       <td>{{ e.date }}</td>
+       <td>{{ e.location }}</td>
+        <td><a href="{% url 'eventDetail' id=p.id %}">{{ e.eventDetail }}</a></td>
+   </tr>
+ {% endfor %}
+</table>
+{% endblock %}
+`
+
+20) update link : base.html
+`
+<ul class="nav navbar-nav">
+  <li><a href="{% url 'event' %}">Event</a></li>
+</ul>
+`
+
+21)
