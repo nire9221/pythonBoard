@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Opening Jobs</h1>
+<table class='table'>
+ <tr>
+     <th>Job Title</th>
+     <th>Employer</th>
+     <th>Location</th>
+ </tr>
+ {% for t in type_list %}
+   <tr>
+       <td><a href="{% url 'jobsdetails' id=t.id %}">{{ t.JobTitle }}</a></td>
+       <td>{{ t.Employer }}</td>
+       <td>{{ t.Location }}</td>
+   </tr>
+
+ {% endfor %}
+
+
+</table>
+
+
+{% endblock %}
