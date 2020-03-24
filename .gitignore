@@ -1,0 +1,7 @@
+venv/
+.vscode/
+*.pyc
+itBoardProject/itBoardApp/__pycache__/*.*
+itBoardProject/itBordApp/__pycache__/*.*
+itBoardProject/itBordApp/migrations/*.*
+itBoardProject/_init_.py

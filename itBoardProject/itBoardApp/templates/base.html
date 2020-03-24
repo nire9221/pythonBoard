@@ -9,8 +9,8 @@
     <body>
         <div class='jumbotron' style="background-color: powderblue; color: darkslategray;">
             <h1>IT Board</h1>
-            <p><a href="{% url 'login' %}">Login</a></p>
-            <p><a href="{% url 'logout' %}">Logout</a></p>
+            <p><a href="{% url 'login' %}">LOGIN</a></p>
+            <p><a href="{% url 'logout' %}">LOGOUT</a></p>
         </div>
         <nav class="navbar navbar-default">
                 <div class="container-fluid">
@@ -20,6 +20,10 @@
                     <li><a href="{% url 'index' %}">HOME</a></li>
                     <li><a href="{% url 'article' %}">ARTICLE</a></li>
                     <li><a href="{% url 'newarticle' %}">ADD ARTICLE</a></li>
+					<li><a href="{% url 'jobs' %}">CAREERS</a></li>
+                    <li><a href="{% url 'newjob' %}">ADD NEW JOB</a></li>
+                    <li><a href="{% url 'event' %}">EVENT</a></li>
+                    <li><a href="{% url 'newevent' %}">ADD EVENT</a></li>
                 </ul>
                 </div>
                 </nav>
