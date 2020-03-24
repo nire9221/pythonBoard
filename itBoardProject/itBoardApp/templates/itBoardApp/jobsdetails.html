@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>{{ job.JobTitle }}</h2>
+<p>Employer: {{ job.Employer }}</p>
+<p>Link: {{ job.JobURL }}</p>
+<p>Added by: {{ job.User }}</p>
+<p>Job Level: {{ job.JobLevel }}</p>
+<p>Location: {{ job.Location }}</p>
+<p>Availability: {{ job.Availability }}</p>
+<p>Description: {{ job.Description }}</p>
+
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>{{ Event.title }}</h2>
+<p>Description: {{ detail.description }} </p>
+<p>Added by: {{ detail.userId }}</p>
+<p>Event Date: {{ detail.date }}</p>
+<p>Event time: {{ detail.time }}</p>
+<p>URL: <a href = "{{ detail.url }}" target="_blank"> {{ detail.url }}</a></p>
+<p>Event location: {{ detail.location }}</p>
+
+{% endblock %}
+
