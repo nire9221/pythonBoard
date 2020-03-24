@@ -41,7 +41,7 @@ class Event_Form_Test(TestCase):
         self.assertFalse(form.is_valid())
 
 
-class New_Meeting_authentication_test(TestCase):
+class New_Event_authentication_test(TestCase):
     def setUp(self):
         self.test_user = User.objects.create_user(
             username='testuser1', password='P@ssw0rd1')
