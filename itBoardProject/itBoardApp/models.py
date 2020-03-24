@@ -1,20 +1,19 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-# Create your models here.
-class Job(models.Model):
-    JobTitle=models.CharField(max_length=255)
-    Employer=models.CharField(max_length=255)
-    JobURL=models.URLField(null=True, blank=True)
-    User=models.ForeignKey(User, on_delete=models.DO_NOTHING)
-    JobLevel=models.CharField(max_length=255)
-    Location=models.CharField(max_length=255)
-    Availability =models.DateField()
-    Description=models.TextField()
+
+class Event(models.Model):
+    title = models.CharField(max_length=255, null=True, blank=True)
+    location = models.CharField(max_length=255)
+    date = models.DateField()
+    time = models.TimeField()
+    description = models.TextField(max_length=255)
+    url = models.URLField(null=True, blank=True)
+    userId = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.JobTitle
-    
+        return self.title
+
     class Meta:
-        db_table='Job'
-        verbose_name_plural='Jobs'
+        db_table = 'event'
+        verbose_name_plural = 'events'
