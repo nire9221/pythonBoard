@@ -4,20 +4,26 @@
         <title>IT Board</title>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-         <link href="https://fonts.googleapis.com/css?family=Inconsolata&display=swap" rel="stylesheet">
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     </head>
     <body>
-        <div class='jumbotron' style="background-color: Navy; color: white;">
+        <div class='jumbotron' style="background-color: powderblue; color: darkslategray;">
             <h1>IT Board</h1>
+            <p><a href="{% url 'login' %}">LOGIN</a></p>
+            <p><a href="{% url 'logout' %}">LOGOUT</a></p>
         </div>
         <nav class="navbar navbar-default">
                 <div class="container-fluid">
                 <div class="navbar-header">
-                <a class="navbar-brand" href="{% url 'index' %}">IT Board</a>
                 </div>
                 <ul class="nav navbar-nav">
-                      <li><a href="{% url 'event' %}">Event</a></li>
-                      <li><a href="{% url 'newevent' %}">Add Event</a></li>
+                    <li><a href="{% url 'index' %}">HOME</a></li>
+                    <li><a href="{% url 'article' %}">ARTICLE</a></li>
+                    <li><a href="{% url 'newarticle' %}">ADD ARTICLE</a></li>
+					<li><a href="{% url 'jobs' %}">CAREERS</a></li>
+                    <li><a href="{% url 'newjob' %}">ADD NEW JOB</a></li>
+                    <li><a href="{% url 'event' %}">EVENT</a></li>
+                    <li><a href="{% url 'newevent' %}">ADD EVENT</a></li>
                 </ul>
                 </div>
                 </nav>
