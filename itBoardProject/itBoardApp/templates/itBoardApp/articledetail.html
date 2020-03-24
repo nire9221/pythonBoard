@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Article Detail</h1>
+<table class='table'>
+    <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>URL</th>
+        <th>Genre</th>
+        <th>User</th>
+        <th>Date</th>
+    </tr>
+    <tr>
+        <td>{{article_detail.articletitle}}</td>
+        <td>{{article_detail.articledescription}}</td>
+        <td><a href="{{article_detail.articleurl}}" target="_blank"> {{article_detail.articleurl}}></a></td>
+        <td>{{article_detail.articlegenre}}</td>
+        <td>{{article_detail.articleuser}}</td>
+        <td>{{article_detail.articledate}}</td>
+        
+    </tr>
+</table>
+{% endblock %}
